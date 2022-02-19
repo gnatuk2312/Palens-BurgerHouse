@@ -8,21 +8,15 @@ class Landing extends React.Component {
 		url: ''
 	};
 
-
 	displayList = () => {
-		// const display = this.state.display;
 		const { display } = this.state;
 		this.setState({ display: !display });
 	}
 
 	getTitle = (restaurant) => {
-		// const title = restaurant.title
-		// const url = restaurant.url
 		const { title, url } = restaurant;
 		this.setState({
-			// title: title,
 			title,
-			// url: url,
 			url,
 			display: false
 		})
@@ -46,7 +40,7 @@ class Landing extends React.Component {
 						<div className='arrow_picker-down'></div>
 					</div>
 				</div>
-				{this.state.display ? <div className='restaurant_select_bottom'>
+				{this.state.display ? <div className="restaurant_select_bottom">
 					<ul>
 						{restaurants.map(restaurant => {
 							return <li onClick={() => this.getTitle(restaurant)} key={restaurant.id}>{restaurant.title}</li>
