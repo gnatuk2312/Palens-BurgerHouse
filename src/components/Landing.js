@@ -42,8 +42,8 @@ class Landing extends React.Component {
 				</div>
 				{this.state.display ? <div className="restaurant_select_bottom">
 					<ul>
-						{restaurants.map(restaurant => {
-							return <li onClick={() => this.getTitle(restaurant)} key={restaurant.id}>{restaurant.title}</li>
+						{restaurants.map((restaurant, i) => {
+							return <li onClick={() => this.getTitle(restaurant)} key={i}>{restaurant.title}</li>
 						})}
 					</ul>
 				</div> : null}
