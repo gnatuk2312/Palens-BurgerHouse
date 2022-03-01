@@ -47,7 +47,7 @@ const Order = props => {
 							onClick={() => { props.deleteFromOrder(key) }}
 							className='cancellItem'
 						>
-							&times;
+							&#10060;
 						</button>
 					</span>
 				</li>

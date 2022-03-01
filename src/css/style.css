@@ -198,11 +198,11 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.8rem;
 }
 h1 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 900;
   margin: 0;
 }
@@ -211,8 +211,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }
 h2 {
   text-align: center;
@@ -301,7 +301,7 @@ ul.order li {
   border-bottom: 1px solid #000;
   padding: 2rem 0 2rem 0.2rem;
   display: flex;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   justify-content: space-between;
   align-items: center;
 }
@@ -329,8 +329,8 @@ ul.order li span.count span {
   margin: 0 10px;
 }
 .total {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   border-bottom: 3px solid #000;
   border-top: 3px double #000;
 }
@@ -412,7 +412,7 @@ ul.order li span.count span {
 }
 .menu-burger p {
   margin: 5px 0;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .menu-burger .burger-name {
   margin: 0;
@@ -423,7 +423,7 @@ ul.order li span.count span {
 .menu-burger .price {
   font-size: 1.4rem;
   justify-content: flex-end;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .menu-burger img {
   width: 100%;
@@ -441,8 +441,8 @@ input[type=submit] {
   background: #f00;
   color: #fff;
   font-size: 1.4rem;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   transition: all 0.2s;
   position: relative;
   z-index: 2;
