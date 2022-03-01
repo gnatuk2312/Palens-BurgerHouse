@@ -1,6 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Burger extends React.Component {
+
+	static propTypes = {
+		details: PropTypes.shape({
+			image: PropTypes.string,
+			name: PropTypes.string,
+			price: PropTypes.number,
+			desc: PropTypes.string,
+			status: PropTypes.string
+		}),
+		index: PropTypes.string,
+		AddToOrder: PropTypes.func
+	}
+
 	render() {
 		//const image = this.props.details.image;
 		//const name = this.props.details.name;
