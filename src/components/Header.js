@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Header = (props) => (
+const Header = props => (
 	<header className='top'>
 		<div className='wrap'>
 			<div className='header-content'>
@@ -25,6 +25,6 @@ const Header = (props) => (
 
 Header.propTypes = {
 	title: PropTypes.string.isRequired
-}
+};
 
 export default Header;

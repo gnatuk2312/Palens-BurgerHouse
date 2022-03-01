@@ -1,48 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class EditBurgerForm extends React.Component {
-	static propTypes = {
-		deleteBurger: PropTypes.func,
-		updateBurger: PropTypes.func,
-		index: PropTypes.string,
-		burger: PropTypes.shape({
-			image: PropTypes.string,
-			name: PropTypes.string,
-			price: PropTypes.number,
-			desc: PropTypes.string,
-			status: PropTypes.string
-		})
-	}
-
-	handleChange = (event) => {
+const EditBurgerForm = props => {
+	const handleChange = event => {
 		const updatedBurger = {
-			...this.props.burger,
+			...props.burger,
 			[event.currentTarget.name]: event.currentTarget.name === 'price'
 				? parseFloat(event.currentTarget.value) || 0
 				: event.currentTarget.value
 		};
-
-		this.props.updateBurger(this.props.index, updatedBurger);
-
-
-	}
-
-	render() {
-		return (
-			<div className='burger-edit'>
-				<input onChange={this.handleChange} name='name' type='text' value={this.props.burger.name} />
-				<input onChange={this.handleChange} name='price' type='text' value={this.props.burger.price} />
-				<select onChange={this.handleChange} name='status' className='status'>
-					<option value='available'>Доступно!</option>
-					<option value='unavailable'>Недоступно!</option>
-				</select>
-				<textarea onChange={this.handleChange} name='desc' value={this.props.burger.desc} />
-				<input onChange={this.handleChange} name='image' type='text' value={this.props.burger.image} />
-				<button onClick={() => this.props.deleteBurger(this.props.index)}>Видалити з меню</button>
-			</div>
-		);
+		props.updateBurger(props.index, updatedBurger);
 	};
+
+	return (
+		<div className='burger-edit'>
+			<input onChange={handleChange} name='name' type='text' value={props.burger.name} />
+			<input onChange={handleChange} name='price' type='text' value={props.burger.price} />
+			<select onChange={handleChange} name='status' className='status'>
+				<option value='available'>Доступно!</option>
+				<option value='unavailable'>Недоступно!</option>
+			</select>
+			<textarea onChange={handleChange} name='desc' value={props.burger.desc} />
+			<input onChange={handleChange} name='image' type='text' value={props.burger.image} />
+			<button onClick={() => props.deleteBurger(props.index)}>Видалити з меню</button>
+		</div>
+	);
+};
+
+EditBurgerForm.propTypes = {
+	deleteBurger: PropTypes.func,
+	updateBurger: PropTypes.func,
+	index: PropTypes.string,
+	burger: PropTypes.shape({
+		image: PropTypes.string,
+		name: PropTypes.string,
+		price: PropTypes.number,
+		desc: PropTypes.string,
+		status: PropTypes.string
+	})
 };
 
 export default EditBurgerForm;

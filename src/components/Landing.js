@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 
 const Landing = props => {
-
 	const [display, setDisplay] = useState(false);
 	const [title, setTitle] = useState('');
 	const [url, setUrl] = useState('');
@@ -19,6 +18,7 @@ const Landing = props => {
 		setTitle(title);
 		setUrl(url);
 	};
+
 	const goToRestaurant = () => {
 		props.history.push(`/restaurant/${url}`);
 	};
@@ -46,8 +46,7 @@ const Landing = props => {
 				<button onClick={goToRestaurant}>Перейти в ресторан</button>
 			) : null}
 		</div>
-
-	)
+	);
 };
 
 Landing.propTypes = {

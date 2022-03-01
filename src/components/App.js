@@ -7,12 +7,10 @@ import Burger from './Burger';
 import sampleBurgers from '../sample-burgers';
 import base from '../base';
 
-
 class App extends React.Component {
-
 	static propTypes = {
 		match: PropTypes.object
-	}
+	};
 
 	state = {
 		burgers: {},
@@ -35,13 +33,12 @@ class App extends React.Component {
 
 	componentWillUnmount() {
 		base.removeBinding(this.ref);
-	}
+	};
 
 	componentDidUpdate() {
 		const { params } = this.props.match;
-		localStorage.setItem(params.restaurantId, JSON.stringify(this.state.order))
-
-	}
+		localStorage.setItem(params.restaurantId, JSON.stringify(this.state.order));
+	};
 
 	addBurger = (burger) => {
 		// 1. Робимо копію об'єкта state
@@ -56,7 +53,7 @@ class App extends React.Component {
 		// 1. Робимо копію об'єкта state
 		const burgers = { ...this.state.burgers };
 		// 2. Обновляємо потріьний бургер
-		burgers[key] = updatedBurger
+		burgers[key] = updatedBurger;
 		// 3. Записати наш новий об'єкт burgers в state
 		this.setState({ burgers: burgers });
 	};
@@ -68,11 +65,10 @@ class App extends React.Component {
 		burgers[key] = null;
 		// 3. Записати наш новий об'єкт burgers в state
 		this.setState({ burgers });
-
-	}
+	};
 
 	loadSampleBurgers = () => {
-		this.setState({ burgers: sampleBurgers })
+		this.setState({ burgers: sampleBurgers });
 	};
 
 	AddToOrder = (key) => {
@@ -82,7 +78,7 @@ class App extends React.Component {
 		order[key] = order[key] + 1 || 1;
 		// 3. Записати наш новий об'єкт burgers в state
 		this.setState({ order: order });
-	}
+	};
 
 	deleteFromOrder = (key) => {
 		//1. Робимо копію об'єкта state
@@ -91,7 +87,7 @@ class App extends React.Component {
 		delete order[key];
 		// 3. Записати наш новий об'єкт burgers в state
 		this.setState({ order: order });
-	}
+	};
 
 	render() {
 		return (
@@ -123,6 +119,6 @@ class App extends React.Component {
 				/>
 			</div>
 		);
-	}
-}
+	};
+};
 export default App;
